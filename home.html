@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<style>
+    .form {
+        background-color: #ffffff;
+        /* color: #4e5e72; */
+        /* background-color: tomato;
+    color: white; */
+        border-radius: 0.4rem;
+        border: 2px solid rgb(253, 249, 249);
+        bottom: 15px;
+        left: 260px;
+        width: 700px;
+        position: relative;
+        padding: 40px;
+        margin: 50px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    
+    #Textarea1 {
+        min-height: 150px;
+        overflow-y: auto;
+        word-wrap: break-word;
+    }
+    
+    #Textarea2 {
+        min-height: 80px;
+        overflow-y: auto;
+        word-wrap: normal;
+    }
+    
+    .dark-mode {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<body>
+
+    <button onclick="myFunction1()" class=button1>Toggle Dark mode</button>
+
+    <script>
+        function myFunction1() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+
+
+
+<h1>
+    <center> Text Summarizer</center>
+</h1>
+<div class="form">
+    <form action="" method="get">
+        <div class='text'>
+            Enter Text:
+        </div>
+        <textarea placeholder="Enter text here" id="Textarea1" rows="2" cols="200" style="width:100%; height:auto" name="text"> {{ text }}
+            </textarea>
+        <div class='text'>
+            Summarized text:
+        </div>
+        <textarea disabled=True id="Textarea2" placeholder="Symmarized text will appear here" rows="2" cols="200" style="width:100%; height:auto">
+           {{ summary }}
+           </textarea> </div>
+
+<center><input class=submit type="submit" value="Summarise"></center>
+</form>
+<center><button onclick="myFunction()">Copy Summarized text</button></center>
+
+
+<script>
+    function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("Textarea2");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+
+        /* Alert the copied text */
+        alert("Text is Copied!");
+    }
+</script>
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Dancing+Script:400,700);
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #c8e7d8;
+        color: #4e5e72;
+        text-align: center;
+        font-family: monospace;
+        overflow: auto;
+    }
+    
+    h1,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: 4rem;
+        font-family: 'Dancing Script';
+    }
+    
+    .text {
+        font-size: 2rem;
+        font-family: 'Dancing Script';
+        color: #4e5e72;
+    }
+    
+    button {
+        transition: box-shadow .3s;
+        line-height: 1.5rem;
+        border: 0;
+        outline: none;
+        font-family: inherit;
+        appearance: none;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    /* input {
+  color: #4e5e72;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg ' width='10 ' height='24 '><rect fill='rgb(229, 225, 187) ' x='0 ' y='23 ' width='10 ' height='1 '/></svg>");
+} */
+    /* textarea {
+ width: 100%;
+ height: 8rem;
+ resize: none; */
+    /* } */
+    /* input {
+ width: 50%;
+ margin-bottom: 1rem;}
+  .input[type=text]:invalid, [type=email]:invalid {
+    box-shadow: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg ' width='10 ' height='24 '><rect fill='rgba(240, 132, 114, 0.5) ' x='0 ' y='23 ' width='10 ' height='1 '/></svg>");
+  } */
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+    
+    .submit {
+        transition: box-shadow .3s;
+        position: relative;
+        bottom: 45px;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        background-color: rgba(78, 94, 114, 0.9);
+        color: white;
+        font-size: 1rem;
+        transition: background-color 0.2s;
+    }
+    
+    .submit:hover:focus {
+        outline: none;
+        background-color: rgba(78, 94, 114, 1);
+    }
+    
+    button {
+        position: relative;
+        bottom: 30px;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        background-color: rgba(78, 94, 114, 0.9);
+        color: white;
+        font-size: 1rem;
+        transition: background-color 0.2s;
+    }
+    
+    .button:hover:focus {
+        outline: none;
+        background-color: rgba(78, 94, 114, 1);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    
+    .button1 {
+        /* padding: 0.5rem 1rem; */
+        position: relative;
+        top: 10px;
+        left: 550px;
+        transition: box-shadow .3s;
+        border-radius: 50%;
+        background-color: rgba(78, 94, 114, 0.9);
+        color: white;
+        font-size: 1rem;
+        transition: background-color 0.2s;
+    }
+    
+    .button:hover,
+     :focus {
+        outline: none;
+        background-color: rgba(78, 94, 114, 1);
+    }
+    /* textarea:focus {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg ' width='10 ' height='24 '><rect fill='rgba(78, 94, 114, 0.3) ' x='0 ' y='23 ' width='10 ' height='1 '/></svg>");
+  outline: none;
+} */
+    /* .wrapper {
+  width: 35rem;
+  background-color: white;
+}
+.letter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 30rem;
+  margin: auto;
+  perspective: 60rem;
+} */
+    /* .side {
+  height: 12rem;
+  background-color: #fcfcf8;
+  outline: 1px solid transparent; */
+    /* &:nth-of-type(1) {
+    padding: 2rem 2rem 0;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: inset 0 0.75rem 2rem rgba(229, 225, 187, 0.5);
+  }
+  &.side:nth-of-type(2) {
+    padding: 2rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.05), inset 0 -0.57rem 2rem rgba(229, 225, 187, 0.5);
+    text-align: right; */
+    /* } */
+</style>
+</style>
